@@ -1,0 +1,29 @@
+# Compiled class files & build artifacts
+*.class
+bin/
+build/
+out/
+
+# Local sensitive configuration (NEVER commit credentials)
+db.properties
+
+# Exported files & user generated output
+*.csv
+students_export_*.csv
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE and Editor directories
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# Temporary and log files
+*.log
+*.tmp

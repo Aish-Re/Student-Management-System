@@ -1,0 +1,5 @@
+# Database Configuration Template
+# Copy this file to db.properties and set your local MySQL password:
+#   cp db.properties.example db.properties
+# Or set via environment variable: export DB_PASSWORD=your_password
+db.password=your_mysql_password_here

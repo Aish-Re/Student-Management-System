@@ -10,16 +10,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Data Access Object for Student CRUD operations and reporting queries.
- * Employs parameterized PreparedStatement queries and try-with-resources
- * to guarantee SQL injection safety and cursor resource closure.
- */
 public class StudentDAO {
 
-    /**
-     * Inserts a new student record into the MySQL database.
-     */
     public boolean addStudent(Student student) {
         String query = "INSERT INTO students (student_id, full_name, gender, date_of_birth, "
                      + "email, phone_number, address, course, department, semester, enrollment_date) "
@@ -49,9 +41,6 @@ public class StudentDAO {
         }
     }
 
-    /**
-     * Retrieves all student records ordered alphabetically by full name.
-     */
     public List<Student> getAllStudents() {
         List<Student> students = new ArrayList<>();
         String query = "SELECT * FROM students ORDER BY full_name";
@@ -72,9 +61,6 @@ public class StudentDAO {
         return students;
     }
 
-    /**
-     * Searches student records matching ID, full name, or email pattern.
-     */
     public List<Student> searchStudents(String searchTerm) {
         List<Student> students = new ArrayList<>();
         String query = "SELECT * FROM students WHERE student_id LIKE ? OR full_name LIKE ? OR email LIKE ?";
@@ -100,9 +86,6 @@ public class StudentDAO {
         return students;
     }
 
-    /**
-     * Updates an existing student record identified by student ID.
-     */
     public boolean updateStudent(Student student) {
         String query = "UPDATE students SET full_name=?, gender=?, date_of_birth=?, email=?, "
                      + "phone_number=?, address=?, course=?, department=?, semester=?, enrollment_date=? "
@@ -132,9 +115,6 @@ public class StudentDAO {
         }
     }
 
-    /**
-     * Deletes a student record by primary key student ID.
-     */
     public boolean deleteStudent(String studentId) {
         String query = "DELETE FROM students WHERE student_id = ?";
 
@@ -175,9 +155,6 @@ public class StudentDAO {
         return null;
     }
 
-    /**
-     * Checks if a student record with the given ID already exists.
-     */
     public boolean isStudentIdExists(String studentId) {
         String query = "SELECT 1 FROM students WHERE student_id = ?";
 
@@ -197,9 +174,6 @@ public class StudentDAO {
         }
     }
 
-    /**
-     * Returns the aggregate count of all registered students.
-     */
     public int getTotalStudentsCount() {
         String query = "SELECT COUNT(*) FROM students";
 
@@ -219,9 +193,7 @@ public class StudentDAO {
         return 0;
     }
 
-    /**
-     * Retrieves the 5 most recently registered students based on enrollment date.
-     */
+
     public List<Student> getRecentStudents() {
         List<Student> students = new ArrayList<>();
         String query = "SELECT * FROM students ORDER BY enrollment_date DESC LIMIT 5";
@@ -242,9 +214,7 @@ public class StudentDAO {
         return students;
     }
 
-    /**
-     * Groups student counts by distinct course names.
-     */
+
     public List<Object[]> getCourseStatistics() {
         List<Object[]> stats = new ArrayList<>();
         String query = "SELECT course, COUNT(*) as count FROM students GROUP BY course";
@@ -268,9 +238,6 @@ public class StudentDAO {
         return stats;
     }
 
-    /**
-     * Returns the number of distinct active courses represented in student records.
-     */
     public int getActiveCoursesCount() {
         String query = "SELECT COUNT(DISTINCT course) FROM students";
 
@@ -290,9 +257,6 @@ public class StudentDAO {
         return 0;
     }
 
-    /**
-     * Returns the number of distinct academic departments represented in student records.
-     */
     public int getDepartmentsCount() {
         String query = "SELECT COUNT(DISTINCT department) FROM students";
 
@@ -312,9 +276,6 @@ public class StudentDAO {
         return 0;
     }
 
-    /**
-     * Maps the current row of a ResultSet to a populated Student model instance.
-     */
     private Student extractStudentFromResultSet(ResultSet rs) throws SQLException {
         Student student = new Student();
         student.setStudentId(rs.getString("student_id"));

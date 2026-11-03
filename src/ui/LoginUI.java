@@ -10,10 +10,7 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * Administrator login interface providing credentials input and
- * service-layer authentication against the MySQL database.
- */
+
 public class LoginUI extends JFrame {
 
     private static final Color PRIMARY   = new Color(41, 128, 185);
@@ -198,9 +195,6 @@ public class LoginUI extends JFrame {
         }
     }
 
-    /**
-     * Vector icon rendering an academic graduation cap.
-     */
     private static class AcademicCapIcon implements Icon {
         private final Color color;
 

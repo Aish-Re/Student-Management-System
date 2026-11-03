@@ -4,10 +4,6 @@ import model.Student;
 import dao.StudentDAO;
 import java.util.List;
 
-/**
- * Service layer orchestrating student business logic, input validation,
- * and data access delegation to StudentDAO.
- */
 public class StudentService {
     private final StudentDAO studentDAO;
 

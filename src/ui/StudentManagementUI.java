@@ -8,10 +8,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
 
-/**
- * Main student records management frame displaying all students in a sortable,
- * searchable JTable, and providing actions for registration, editing, deletion, and CSV export.
- */
 public class StudentManagementUI extends JFrame {
 
     private static final Color PRIMARY    = new Color(41, 128, 185);
@@ -236,8 +232,6 @@ public class StudentManagementUI extends JFrame {
     }
 
     private void addStudent() {
-        // Modal JDialog setVisible(true) blocks the UI thread until closed,
-        // ensuring the table refreshes immediately with the latest database records.
         new AddEditStudentUI(this, null).setVisible(true);
         loadStudentData();
     }

@@ -6,19 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Data Access Object for Administrator authentication.
- * Uses parameterized JDBC PreparedStatement queries to prevent SQL injection.
- */
 public class AdminDAO {
 
-    /**
-     * Validates administrator credentials against the database.
-     *
-     * @param username administrator username
-     * @param password administrator password
-     * @return true if credentials match an active record, false otherwise
-     */
     public boolean validateAdmin(String username, String password) {
         String query = "SELECT * FROM admin WHERE username = ? AND password = ?";
 

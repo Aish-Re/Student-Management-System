@@ -3,11 +3,7 @@ import database.DatabaseConnection;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-/**
- * Main application entry point for the Student Management System.
- * Initializes the system Look and Feel, launches the Login UI on the Swing
- * Event Dispatch Thread, and registers a JVM shutdown hook to close JDBC connections.
- */
+
 public class Main {
     public static void main(String[] args) {
         try {

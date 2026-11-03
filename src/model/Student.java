@@ -2,10 +2,6 @@ package model;
 
 import java.util.Date;
 
-/**
- * Domain entity model representing a Student record.
- * Maps directly to columns in the 'students' MySQL table.
- */
 public class Student {
     private String studentId;
     private String fullName;

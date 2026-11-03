@@ -3,10 +3,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-/**
- * Standalone command-line verification utility.
- * Tests direct JDBC connectivity and queries the admin table without launching the GUI.
- */
 public class TestDB {
     public static void main(String[] args) {
         System.out.println("Testing database connection...");
@@ -14,19 +10,19 @@ public class TestDB {
         try {
             Connection conn = DatabaseConnection.getConnection();
             if (conn != null) {
-                System.out.println("✅ Connection successful!");
+                System.out.println("Connection successful!");
 
                 try (Statement stmt = conn.createStatement();
                      ResultSet rs = stmt.executeQuery("SELECT * FROM admin")) {
                     if (rs.next()) {
-                        System.out.println("✅ Found admin: " + rs.getString("username"));
+                        System.out.println("Found admin: " + rs.getString("username"));
                     }
                 }
             } else {
-                System.out.println("❌ Connection failed - got null connection");
+                System.out.println("Connection failed - got null connection");
             }
         } catch (Exception e) {
-            System.out.println("❌ Error: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage());
             e.printStackTrace();
         }
     }

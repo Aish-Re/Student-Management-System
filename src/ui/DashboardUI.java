@@ -12,10 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Main application dashboard displaying real-time enrollment statistics,
- * recent registrations, and sidebar navigation controls.
- */
+
 public class DashboardUI extends JFrame {
 
     private static final Color HEADER_BG  = new Color(41, 128, 185);
@@ -350,7 +347,6 @@ public class DashboardUI extends JFrame {
         JOptionPane.showMessageDialog(this, sp, "Student Report", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    /** 18x18 vector icons for sidebar navigation items */
     private static class VectorSidebarIcon implements Icon {
         private final String type;
         private final Color color;
@@ -397,7 +393,7 @@ public class DashboardUI extends JFrame {
         }
     }
 
-    /** 38x38 vector icons for dashboard statistic cards */
+
     private static class VectorStatIcon implements Icon {
         private final String type;
         private final Color accent;
@@ -444,7 +440,6 @@ public class DashboardUI extends JFrame {
         }
     }
 
-    /** 30x30 circular avatar icon with student initial */
     private static class AvatarIcon implements Icon {
         private final String initial;
         private final Color bg;

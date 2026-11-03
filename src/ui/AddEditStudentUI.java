@@ -9,10 +9,6 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.util.Date;
 
-/**
- * Modal dialog for registering a new student or editing an existing student record.
- * Form values are validated before submission.
- */
 public class AddEditStudentUI extends JDialog {
 
     private static final Color PRIMARY    = new Color(41, 128, 185);
@@ -166,9 +162,6 @@ public class AddEditStudentUI extends JDialog {
         return row + 1;
     }
 
-    /**
-     * Adds a field row with a uniform label and styled component.
-     */
     private int addFormRow(JPanel form, GridBagConstraints g,
                            int row, String labelText, JComponent field) {
         JLabel lbl = new JLabel(labelText);
